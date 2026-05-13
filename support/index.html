@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support — Anchored: Couples Devotional</title>
+  <meta name="description" content="Support for Anchored, a Christian couples devotional app for Scripture, prayer, reflection, and shared spiritual rhythms.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #6f8f72;
+      --primary-dark: #4f765a;
+      --primary-light: #e9efe6;
+      --gold: #d7ad54;
+      --bg: #f7f0e6;
+      --text: #1f2a37;
+      --text-muted: #697268;
+      --white: #fffaf1;
+      --line: #e4d9c8;
+      --shadow: 0 18px 45px rgba(64, 54, 39, 0.08);
+      --radius-lg: 24px;
+      --radius-md: 16px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #1f1a15;
+        --text: #f4eadc;
+        --text-muted: #c7baa9;
+        --white: #29231c;
+        --line: #3a3128;
+        --primary-light: rgba(111, 143, 114, 0.18);
+        --shadow: 0 18px 45px rgba(0, 0, 0, 0.24);
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: "Archivo", sans-serif;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(215, 173, 84, 0.16), transparent 34rem),
+        linear-gradient(180deg, #fbf5eb 0%, var(--bg) 48%, #efe4d5 100%);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 42px 20px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      body {
+        background:
+          radial-gradient(circle at 50% 0%, rgba(111, 143, 114, 0.18), transparent 34rem),
+          linear-gradient(180deg, #282117 0%, var(--bg) 100%);
+      }
+    }
+
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 58px;
+    }
+
+    .app-icon {
+      width: 84px;
+      height: 84px;
+      border-radius: 22px;
+      margin-bottom: 24px;
+      box-shadow: 0 14px 26px rgba(64, 54, 39, 0.16);
+    }
+
+    .eyebrow {
+      color: var(--primary-dark);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 46px;
+      font-weight: 700;
+      line-height: 0.98;
+      margin-bottom: 14px;
+    }
+
+    header p {
+      color: var(--text-muted);
+      font-size: 18px;
+      max-width: 430px;
+      margin: 0 auto;
+    }
+
+    .support-card {
+      background: rgba(255, 250, 241, 0.86);
+      border: 1px solid rgba(228, 217, 200, 0.72);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      box-shadow: var(--shadow);
+      margin-bottom: 48px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .support-card {
+        background: rgba(41, 35, 28, 0.9);
+      }
+    }
+
+    .support-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 22px 54px rgba(64, 54, 39, 0.12);
+    }
+
+    .icon-circle {
+      width: 64px;
+      height: 64px;
+      background: var(--primary-light);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .icon-circle svg {
+      width: 28px;
+      height: 28px;
+      color: var(--primary-dark);
+    }
+
+    .card-content {
+      flex: 1;
+    }
+
+    .card-content h2 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .card-content p {
+      color: var(--text-muted);
+      font-size: 16px;
+      margin-bottom: 16px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--primary);
+      color: #ffffff;
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 15px;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .btn:hover {
+      background: var(--primary-dark);
+      transform: translateY(-1px);
+    }
+
+    .section-title {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--primary-light);
+    }
+
+    .faq {
+      margin-bottom: 60px;
+    }
+
+    .faq-item {
+      margin-bottom: 32px;
+    }
+
+    .faq-item h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .faq-item h3::before {
+      content: "Q";
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      font-size: 12px;
+      line-height: 1.3;
+      padding: 2px 7px;
+      border-radius: 6px;
+      margin-top: 4px;
+    }
+
+    .faq-item p {
+      color: var(--text-muted);
+      font-size: 16px;
+      padding-left: 38px;
+    }
+
+    .contact-tips {
+      background: var(--primary-light);
+      border: 1px solid rgba(111, 143, 114, 0.12);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      margin-bottom: 60px;
+    }
+
+    .contact-tips h4 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--primary-dark);
+    }
+
+    .contact-tips ul {
+      list-style: none;
+    }
+
+    .contact-tips li {
+      font-size: 14px;
+      color: var(--text);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .contact-tips li::before {
+      content: "";
+      width: 5px;
+      height: 5px;
+      background: var(--gold);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    footer {
+      text-align: center;
+      padding-top: 40px;
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-links {
+      margin-bottom: 16px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.2s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--primary-dark);
+    }
+
+    .copyright {
+      color: var(--text-muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 34px 18px;
+      }
+
+      .support-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 24px;
+      }
+
+      h1 {
+        font-size: 36px;
+      }
+
+      .faq-item p {
+        padding-left: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <img src="./assets/anchored-icon.png" alt="Anchored app icon" class="app-icon">
+      <div class="eyebrow">Anchored</div>
+      <h1>Anchored Support</h1>
+      <p>We are here to help you build a calm, Christ-centered rhythm together.</p>
+    </header>
+
+    <div class="support-card">
+      <div class="icon-circle" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+        </svg>
+      </div>
+      <div class="card-content">
+        <h2>Direct Assistance</h2>
+        <p>Typical response time is 24-48 hours.</p>
+        <a href="mailto:dinko7119@gmail.com?subject=Anchored%20Support%20Request" class="btn">Email Support</a>
+      </div>
+    </div>
+
+    <div class="faq">
+      <h2 class="section-title">Common Questions</h2>
+
+      <div class="faq-item">
+        <h3>Premium features not unlocking?</h3>
+        <p>If you recently purchased Anchored Premium but content remains locked, open the paywall or Profile screen in the app and tap Restore Purchases. This resyncs your App Store purchase with RevenueCat and Anchored.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How do I manage or cancel a subscription?</h3>
+        <p>Subscriptions are managed directly by Apple. On your iPhone, go to Settings, tap your Apple ID, then Subscriptions to view, change, or cancel your Anchored membership.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How do I pair with my partner?</h3>
+        <p>In Anchored, create an invite link from the pairing flow and send it to your partner. If the link does not open the app, make sure both partners are using the latest version and try opening the invite from Safari.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How do I delete my account and data?</h3>
+        <p>You can request account deletion by emailing us at deanodiergaardt@gmail.com from the email address tied to your account. We will remove your account, pairing data, and personal app data within 30 days.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>App crashing, audio, widget, or sync issues?</h3>
+        <p>First, update to the latest version of iOS and Anchored. If issues persist, restart the app and include your iPhone model, iOS version, and the screen where the issue happened when contacting support.</p>
+      </div>
+    </div>
+
+    <div class="contact-tips">
+      <h4>When contacting support, please include:</h4>
+      <ul>
+        <li>Your iPhone model and iOS version</li>
+        <li>The email address tied to your Anchored account</li>
+        <li>Whether the issue affects you, your partner, or both accounts</li>
+        <li>A brief description of the issue and steps to reproduce it</li>
+      </ul>
+    </div>
+
+    <footer>
+      <div class="footer-links">
+        <a href="https://dinko9.github.io/Anchored-Legal/privacy.html">Privacy Policy</a>
+        <a href="https://dinko9.github.io/Anchored-Legal/">Terms of Service</a>
+      </div>
+      <p class="copyright">© 2026 Anchored. All rights reserved.</p>
+    </footer>
+  </div>
+</body>
+</html>
